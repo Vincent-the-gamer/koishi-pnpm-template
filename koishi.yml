@@ -1,0 +1,73 @@
+plugins:
+  group:server:
+    server:on09bz:
+      port: 5140
+      maxPort: 5149
+    ~server-satori:wfdztc: {}
+    ~server-temp:6vyo5d: {}
+  group:basic:
+    ~admin:8g5irt: {}
+    ~bind:w4fnrx: {}
+    commands:h8zx22: {}
+    help:bhf4o4: {}
+    http:hf0mlb: {}
+    ~inspect:mrrll2: {}
+    locales:bcu4x0: {}
+    proxy-agent:aixwnn: {}
+    rate-limit:p1hmv4: {}
+    ~telemetry:zhtwg0:
+      mode: 'off'
+  group:console:
+    actions:cn11jp: {}
+    analytics:m9blyn: {}
+    android:4vom6i:
+      $if: env.KOISHI_AGENT?.includes('Android')
+    ~auth:hxrhhe: {}
+    config:vi8yie: {}
+    console:0n47if:
+      open: true
+    dataview:ummo6y: {}
+    desktop:ci8w8r:
+      $if: env.KOISHI_AGENT?.includes('Desktop')
+    explorer:uhnkqr: {}
+    logger:v4syzg: {}
+    insight:01cayr: {}
+    market:uakeiq:
+      search:
+        endpoint: https://registry.koishi.chat/index.json
+    notifier:fziql1: {}
+    oobe:xjpd6x: {}
+    sandbox:6thqs4: {}
+    status:wovcwp: {}
+    theme-vanilla:exc7ze: {}
+  group:storage:
+    ~database-mongo:l2dvrs:
+      database: koishi
+    ~database-mysql:c5y5hs:
+      database: koishi
+    ~database-postgres:xepvhg:
+      database: koishi
+    database-sqlite:n3gxlw:
+      path: data/koishi.db
+    assets-local:s0q1la: {}
+  group:adapter:
+    ~adapter-onebot:b26xsk: {}
+    ~adapter-dingtalk:a0h65b: {}
+    ~adapter-discord:9mw5m8: {}
+    ~adapter-kook:k6cc84: {}
+    ~adapter-lark:8k8jya: {}
+    ~adapter-line:jv9tzf: {}
+    ~adapter-mail:mamgnk: {}
+    ~adapter-matrix:cihvrg: {}
+    ~adapter-qq:e9fdth: {}
+    ~adapter-satori:0zyv7z: {}
+    ~adapter-slack:grj6tg: {}
+    ~adapter-telegram:0273ar: {}
+    ~adapter-wechat-official:rv1yxk: {}
+    ~adapter-wecom:k7qnez: {}
+    ~adapter-whatsapp:fua6ud: {}
+    ~adapter-zulip:dmszqy: {}
+  group:develop:
+    $if: env.NODE_ENV === 'development'
+    hmr:6uyxtu:
+      root: .

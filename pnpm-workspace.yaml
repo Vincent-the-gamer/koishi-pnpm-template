@@ -1,0 +1,21 @@
+packages:
+  - external/*
+  - external/*/external/*
+  - external/*/external/*/packages/*
+  - external/*/external/*/plugins/*
+  - external/*/packages/*
+  - external/*/plugins/*
+  - external/satori/adapters/*
+  - external/koishi/plugins/*
+  - external/koishi/plugins/database/*
+  - packages/*
+  - packages/@*/*
+  - plugins/*
+  - plugins/@*/*
+
+# Packages allowed to run their install/build scripts. pnpm blocks these by
+# default, but native/prebuilt dependencies need them.
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  vue-demi: true

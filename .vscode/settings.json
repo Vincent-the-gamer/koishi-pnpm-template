@@ -1,0 +1,5 @@
+{
+  "git.repositoryScanIgnoredFolders": ["node_modules"],
+  "git.repositoryScanMaxDepth": 10,
+  "git.autoRepositoryDetection": "subFolders",
+}

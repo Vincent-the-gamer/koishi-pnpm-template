@@ -1,0 +1,23 @@
+rm .gitignore
+
+echo "package.json" >> .gitignore
+echo "README*" >> .gitignore
+echo "LICENSE*" >> .gitignore
+echo "pnpm-lock.yaml" >> .gitignore
+echo "node_modules" >> .gitignore
+echo ".npmrc" >> .gitignore
+echo "!.git" >> .gitignore
+
+for file in $(cat package.json | jq -r '.files' | sed '1d' | sed '$d'); do
+  echo $file | cut -d \" -f 2 >> .gitignore
+done
+
+for file in $(find . -type f,l | git check-ignore --stdin --no-index); do
+  dir=$(dirname $RUNNER_TEMP/bundle/$file)
+  mkdir -p $dir
+  cp -a $file $dir
+done
+
+cd $RUNNER_TEMP/bundle
+
+zip $([[ $OSTYPE = "msys" ]] && echo "-9qr" || echo "-9qry") ../bundle.zip $(ls -A)
