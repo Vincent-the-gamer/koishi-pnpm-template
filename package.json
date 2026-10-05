@@ -3,6 +3,21 @@
   "version": "1.0.0",
   "packageManager": "pnpm@12.9.1",
   "private": true,
+  "workspaces": [
+    "external/*",
+    "external/*/external/*",
+    "external/*/external/*/packages/*",
+    "external/*/external/*/plugins/*",
+    "external/*/packages/*",
+    "external/*/plugins/*",
+    "external/satori/adapters/*",
+    "external/koishi/plugins/*",
+    "external/koishi/plugins/database/*",
+    "packages/*",
+    "packages/@*/*",
+    "plugins/*",
+    "plugins/@*/*"
+  ],
   "files": [
     ".env",
     "koishi.yml"
